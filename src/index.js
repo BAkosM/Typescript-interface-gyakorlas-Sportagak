@@ -55,7 +55,14 @@ class Calvinball {
         this.pont = Math.floor(Math.random() * 91 + 10);
     }
     getwinner() { return this.winner; }
-    setwinner(winner) { this.winner = winner; }
+    setwinner(winner) {
+        if (winner = "Calvin") {
+            this.winner = "Calvin";
+        }
+        else if (winner = "Hobbes") {
+            this.winner = "Hobbes";
+        }
+    }
     getdate() { return this.date; }
     setdate(date) { this.date = date; }
     result() {
@@ -75,6 +82,13 @@ let eredmenyek = [
 ];
 for (let eredmeny of eredmenyek) {
     eredmeny.result();
-    eredmeny.getwinner();
+    console.log(" " + eredmeny.getwinner());
+}
+;
+for (let eredmeny of eredmenyek) {
+    if (eredmeny.getwinner() == "Calvin") {
+        eredmeny.result();
+        console.log(" " + eredmeny.getwinner());
+    }
 }
 ;

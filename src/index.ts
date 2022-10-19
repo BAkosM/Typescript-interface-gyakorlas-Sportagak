@@ -76,7 +76,11 @@ class Calvinball implements Results{
         this.pont = Math.floor(Math.random() * 91 + 10);
     }
     getwinner() :string { return this.winner; }
-    setwinner(winner :string) :void { this.winner = winner; }
+    setwinner(winner :string) :void { if(winner ="Calvin"){
+        this.winner = "Calvin";
+    } else if (winner = "Hobbes"){
+        this.winner = "Hobbes";
+    } }
     getdate() :Date { return this.date; }
     setdate(date :Date) :void { this.date = date;}
     result(): void {
@@ -98,5 +102,12 @@ let eredmenyek: Results[] = [
 
 for (let eredmeny of eredmenyek){
     eredmeny.result();
-    eredmeny.getwinner();
+    console.log(" "+eredmeny.getwinner());
+};
+
+for (let eredmeny of eredmenyek){
+    if (eredmeny.getwinner() == "Calvin"){
+        eredmeny.result();
+        console.log(" "+eredmeny.getwinner());
+    }   
 };
