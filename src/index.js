@@ -1,11 +1,15 @@
 "use strict";
 class Football {
-    constructor(winner, date, goal1, goal2) {
+    constructor(winner, goal1, goal2) {
         this.winner = winner;
+        this.date = new Date(Date.now());
         this.goal1 = goal1;
         this.goal2 = goal2;
     }
-    ;
+    getwinner() { return this.winner; }
+    setwinner(winner) { this.winner = winner; }
+    getdate() { return this.date; }
+    setdate(date) { this.date = date; }
     result() {
         console.log(this.toString());
     }
@@ -21,10 +25,15 @@ class Football {
 class Marathon {
     constructor(winner, runtime) {
         this.winner = winner;
+        this.date = new Date(Date.now());
         this.runtime = runtime;
         this.runtimesec = Math.floor(this.runtime / 60);
     }
     ;
+    getwinner() { return this.winner; }
+    setwinner(winner) { this.winner = winner; }
+    getdate() { return this.date; }
+    setdate(date) { this.date = date; }
     result() {
         console.log(this.toString());
     }
@@ -42,8 +51,13 @@ class Calvinball {
         else {
             this.winner = "Hobbes";
         }
+        this.date = new Date(Date.now());
         this.pont = Math.floor(Math.random() * 91 + 10);
     }
+    getwinner() { return this.winner; }
+    setwinner(winner) { this.winner = winner; }
+    getdate() { return this.date; }
+    setdate(date) { this.date = date; }
     result() {
         console.log(this.toString());
     }
@@ -51,3 +65,16 @@ class Calvinball {
         return "Calvinball: " + this.pont + " points";
     }
 }
+let eredmenyek = [
+    new Football('Csapat1', 6, 2),
+    new Football('Csapat2', 3, 7),
+    new Marathon('Bela', 300),
+    new Marathon('Peter', 279),
+    new Calvinball(),
+    new Calvinball()
+];
+for (let eredmeny of eredmenyek) {
+    eredmeny.result();
+    eredmeny.getwinner();
+}
+;
